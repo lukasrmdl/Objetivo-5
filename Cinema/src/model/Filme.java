@@ -1,12 +1,13 @@
 package model;
 
 import java.sql.Time;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Filme {
     private String tituloFilme;
-    private Time duracaoFilme;
+    private LocalTime duracaoFilme;
 
     private Genero genero;
 
@@ -24,7 +25,7 @@ public class Filme {
         super();
     }
 
-    public Filme(String tituloFilme, Time duracaoFilme, Genero genero, Atua atua){
+    public Filme(String tituloFilme, LocalTime duracaoFilme, Genero genero, Atua atua){
         super();
         this.tituloFilme = tituloFilme;
         this.duracaoFilme = duracaoFilme;
@@ -32,7 +33,7 @@ public class Filme {
         this.atua = atua;
     }
 
-    public Filme(String tituloFilme, Time duracaoFilme, Genero genero, Atua atua, List<Sessao> sessoes){
+    public Filme(String tituloFilme, LocalTime duracaoFilme, Genero genero, Atua atua, List<Sessao> sessoes){
         super();
         this.tituloFilme = tituloFilme;
         this.duracaoFilme = duracaoFilme;
@@ -55,7 +56,7 @@ public class Filme {
         return tituloFilme;
     }
 
-    public Time getDuracaoFilme() {
+    public LocalTime getDuracaoFilme() {
         return duracaoFilme;
     }
 
@@ -64,7 +65,7 @@ public class Filme {
         this.tituloFilme = tituloFilme;
     }
 
-    public void setDuracaoFilme(Time duracaoFilme) {
+    public void setDuracaoFilme(LocalTime duracaoFilme) {
         this.duracaoFilme = duracaoFilme;
     }
 

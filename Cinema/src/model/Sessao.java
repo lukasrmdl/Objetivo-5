@@ -1,8 +1,8 @@
 package model;
 
-import java.sql.Time;
+import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Date;
+import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
 
@@ -13,7 +13,7 @@ public class Sessao {
     private Sala sala;
 
     private GregorianCalendar dataSessao;
-    private Time horaSessao;
+    private LocalTime horaSessao;
     private Double valorInteira;
     private Double valorMeia;
     private Boolean sessaoEncerrada;
@@ -28,7 +28,7 @@ public class Sessao {
     }
 
 
-    public Sessao(Filme filme, Sala sala, GregorianCalendar dataSessao, Time horaSessao, Double valorInteira, Double valorMeia, Boolean sessaoEncerrada){
+    public Sessao(Filme filme, Sala sala, GregorianCalendar dataSessao, LocalTime horaSessao, Double valorInteira, Double valorMeia, Boolean sessaoEncerrada){
         super();
         this.filme = filme;
         this.sala = sala;
@@ -49,7 +49,7 @@ public class Sessao {
         this.sessaoEncerrada = sessaoEncerrada;
     } // selecionar sessão
 
-    public Sessao(Filme filme, Sala sala, GregorianCalendar dataSessao, Time horaSessao, Double valorInteira, Double valorMeia, Boolean sessaoEncerrada, List<Ingresso> ingressos){
+    public Sessao(Filme filme, Sala sala, GregorianCalendar dataSessao, LocalTime horaSessao, Double valorInteira, Double valorMeia, Boolean sessaoEncerrada, List<Ingresso> ingressos){
         super();
         this.filme = filme;
         this.sala = sala;
@@ -69,7 +69,7 @@ public class Sessao {
         return dataSessao;
     }
 
-    public Time getHoraSessao() {
+    public LocalTime getHoraSessao() {
         return horaSessao;
     }
 
@@ -95,7 +95,7 @@ public class Sessao {
         this.dataSessao = dataSessao;
     }
 
-    public void setHoraSessao(Time horaSessao) {
+    public void setHoraSessao(LocalTime horaSessao) {
         this.horaSessao = horaSessao;
     }
 
@@ -117,7 +117,7 @@ public class Sessao {
         return "{" +
                 "Filme=" + filme +
                 "Sala=" + sala +
-                "Data=" + dataSessao +
+                "Data=" + dataSessao.get(Calendar.DAY_OF_MONTH) + "-" + dataSessao.get(Calendar.MONTH) + "-" + dataSessao.get(Calendar.YEAR) +
                 ", Hora=" + horaSessao +
                 ", Valor Inteira=" + valorInteira +
                 ", Valor Meia=" + valorMeia +
