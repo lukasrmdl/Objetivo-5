@@ -1,18 +1,18 @@
 package br.edu.ifsul.tsi.model;
 
-import java.time.LocalTime;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Filme {
+
+    private Integer idFilme;
     private String tituloFilme;
-    private LocalTime duracaoFilme;
+    private Time duracaoFilme;
 
     private Genero genero;
 
     private Atua atua;
-
-
 
     private List<Sessao> sessoes = new ArrayList<>();
 
@@ -24,7 +24,7 @@ public class Filme {
         super();
     }
 
-    public Filme(String tituloFilme, LocalTime duracaoFilme, Genero genero, Atua atua){
+    public Filme(String tituloFilme, Time duracaoFilme, Genero genero, Atua atua){
         super();
         this.tituloFilme = tituloFilme;
         this.duracaoFilme = duracaoFilme;
@@ -32,7 +32,7 @@ public class Filme {
         this.atua = atua;
     }
 
-    public Filme(String tituloFilme, LocalTime duracaoFilme, Genero genero, Atua atua, List<Sessao> sessoes){
+    public Filme(String tituloFilme, Time duracaoFilme, Genero genero, Atua atua, List<Sessao> sessoes){
         super();
         this.tituloFilme = tituloFilme;
         this.duracaoFilme = duracaoFilme;
@@ -54,9 +54,18 @@ public class Filme {
     public String getTituloFilme() {
         return tituloFilme;
     }
-
-    public LocalTime getDuracaoFilme() {
+    public Time getDuracaoFilme() {
         return duracaoFilme;
+    }
+    public Genero getGenero() {
+        return genero;
+    }
+
+    public Atua getAtua() {
+        return atua; }
+
+    public Integer getIdFilme() {
+        return idFilme;
     }
 
 
@@ -64,14 +73,21 @@ public class Filme {
         this.tituloFilme = tituloFilme;
     }
 
-    public void setDuracaoFilme(LocalTime duracaoFilme) {
+    public void setIdFilme(Integer idFilme) {
+        this.idFilme = idFilme;
+    }
+
+
+    public void setDuracaoFilme(Time duracaoFilme) {
         this.duracaoFilme = duracaoFilme;
     }
+
 
     @Override
     public String toString() {
         return "{" +
-                "Titulo=" + tituloFilme +
+                "ID=" + idFilme +
+                ", Titulo=" + tituloFilme +
                 ", duração=" + duracaoFilme +
                 ", Genero=" + genero +
                 ", Atua=" + atua +

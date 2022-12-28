@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Genero {
-    private String descricaoGenero;
 
-    private List<Filme> filmes = new ArrayList<>();
+    private Integer idGenero;
+
+    private String descricaoGenero;
 
 
     //Construtores
@@ -21,10 +22,10 @@ public class Genero {
         this.descricaoGenero = descricaoGenero;
     }
 
-    public Genero(String descricaoGenero, List<Filme> filmes){
+    public Genero(Integer idGenero, String descricaoGenero){
         super();
+        this.idGenero = idGenero;
         this.descricaoGenero = descricaoGenero;
-        this.filmes = filmes;
     }
 
     //Getters
@@ -33,16 +34,27 @@ public class Genero {
         return descricaoGenero;
     }
 
+    public Integer getIdGenero() {
+        return idGenero;
+    }
+
+
     //Setters
 
     public void setDescricaoGenero(String descricaoGenero) {
         this.descricaoGenero = descricaoGenero;
     }
 
+    public void setIdGenero(Integer idGenero) {
+        this.idGenero = idGenero;
+    }
+
+
     @Override
     public String toString() {
         return "{" +
-                "Descrição=" + descricaoGenero +
+                "ID=" + idGenero +
+                ", Descrição=" + descricaoGenero +
                 '}';
     }
 }
