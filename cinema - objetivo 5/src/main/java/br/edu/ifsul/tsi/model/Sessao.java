@@ -1,4 +1,4 @@
-package model;
+package br.edu.ifsul.tsi.model;
 
 import java.time.LocalTime;
 import java.util.ArrayList;

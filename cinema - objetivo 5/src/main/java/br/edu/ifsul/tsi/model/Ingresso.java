@@ -1,4 +1,4 @@
-package model;
+package br.edu.ifsul.tsi.model;
 
 public class Ingresso {
 
